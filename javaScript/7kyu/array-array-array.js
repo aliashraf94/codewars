@@ -11,16 +11,25 @@
 
 // Solution
 
-function explode(x){
-    let [a,b] = x;
-    
-    if(typeof a == "number" && typeof b == "number") return new Array(a+b).fill(x);
-    else if(typeof a == "number") return new Array(a).fill(x);
-    else if(typeof b == "number") return new Array(b).fill(x);
-    
+function explode(x) {
+    // Destructuring the input array into variables a and b
+    let [a, b] = x;
+  
+    // Check if both a and b are numbers
+    if (typeof a == "number" && typeof b == "number") {
+      // If yes, create a new array of length (a + b) and fill it with copies of array x
+      return new Array(a + b).fill(x);
+    } else if (typeof a == "number") {
+      // If only a is a number, create a new array of length a and fill it with copies of array x
+      return new Array(a).fill(x);
+    } else if (typeof b == "number") {
+      // If only b is a number, create a new array of length b and fill it with copies of array x
+      return new Array(b).fill(x);
+    }
+  
+    // If neither a nor b is a number, return 'Void!'
     return 'Void!';
   }
-
 // Other Solution
 
 const explode=([x,y])=>x+0!=x&&y+0!=y?"Void!":Array((+x||0)+(+y||0)).fill([x,y])
@@ -40,4 +49,3 @@ function explode(x){
     return array;
   }
 
-  
