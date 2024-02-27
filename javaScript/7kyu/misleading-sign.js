@@ -27,3 +27,18 @@ const gaslighting = (shirtWord, yourWord, friendsLetters) => {
   
     return false
   }
+
+  // Other Solution
+
+  function gaslighting(shirtWord,yourWord,friendsLetters) {
+    if (shirtWord === yourWord) return false;
+    const len = shirtWord.length;
+    if (yourWord.length !== len) return true;
+    
+    const known = new Set(friendsLetters);
+    for (let i = 0; i < len; ++i) {
+      const [sc, yc] = [shirtWord[i], yourWord[i]];
+      if (sc !== yc && (known.has(sc) || known.has(yc))) return true; 
+    }
+    return false;
+  }
