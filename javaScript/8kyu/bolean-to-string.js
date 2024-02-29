@@ -3,4 +3,13 @@
 function boolToWord(boolValue) {
     return boolValue ? "Yes" : "No";
   }
-  
+
+// Other Solution
+
+function boolToWord( bool ){
+    if (bool) {
+      return 'Yes';
+    } else {
+      return 'No';
+    }
+  }
